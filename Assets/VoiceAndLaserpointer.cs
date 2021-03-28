@@ -11,10 +11,8 @@ using System.Linq;
 public class VoiceAndLaserpointer : MonoBehaviour
 {
     public SteamVR_LaserPointer laserPointer;
-    Color oldcolor;
     KeywordRecognizer keywordRecognizer;
     Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
-    public GameObject egal;
     GameObject targetGameObject;
 
 
@@ -28,7 +26,7 @@ public class VoiceAndLaserpointer : MonoBehaviour
 
     void Start()
     {
-        targetGameObject = egal;
+        targetGameObject = null;
         //keywords for keyword recognizer
         keywords.Add("blue", () =>
         {
@@ -54,6 +52,12 @@ public class VoiceAndLaserpointer : MonoBehaviour
             targetGameObject.GetComponent<Renderer>().material.color = Color.red;
         });
 
+        keywords.Add("magenta", () =>
+        {
+            Debug.Log("magenta");
+            targetGameObject.GetComponent<Renderer>().material.color = Color.magenta;
+        });
+
         keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
 
         keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
@@ -68,15 +72,14 @@ public class VoiceAndLaserpointer : MonoBehaviour
 
     public void PointerInside(object sender, PointerEventArgs e)
     {
-        oldcolor = e.target.gameObject.GetComponent<Renderer>().material.color;
-        e.target.gameObject.GetComponent<Renderer>().material.color = Color.white;
         targetGameObject = e.target.gameObject;
+        //wie komme ich an das zweite Material??????
+        //targetGameObject.GetComponent<Renderer>().material
     }
 
     public void PointerOutside(object sender, PointerEventArgs e)
     {
-        e.target.gameObject.GetComponent<Renderer>().material.color =oldcolor;
-        targetGameObject = egal;
+        targetGameObject = null;
     }
 
     private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)

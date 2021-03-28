@@ -62,8 +62,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ChangeColor.cs" />
+    <Compile Include="Assets\ManipulateColorByVoice.cs" />
+    <Compile Include="Assets\ManipulateSizeByVoice.cs" />
+    <Compile Include="Assets\SelectObjectByRaycast.cs" />
+    <Compile Include="Assets\SelectObjectByVoice.cs" />
     <Compile Include="Assets\VoiceAndLaserpointer.cs" />
     <Compile Include="Assets\VoiceCommands.cs" />
+    <None Include="Assets\Materials\highlight.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/HTW-FB4/Desktop/ViveVoiceMultimodal/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -265,6 +271,9 @@
     <Reference Include="nunit.framework">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="Valve.Newtonsoft.Json">
+      <HintPath>C:/Users/HTW-FB4/Desktop/ViveVoiceMultimodal/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>C:/Users/HTW-FB4/Desktop/ViveVoiceMultimodal/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
@@ -273,9 +282,6 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>C:/Users/HTW-FB4/Desktop/ViveVoiceMultimodal/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
-    <Reference Include="Valve.Newtonsoft.Json">
-      <HintPath>C:/Users/HTW-FB4/Desktop/ViveVoiceMultimodal/Assets/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -645,13 +651,13 @@
       <Project>{4973A9DD-64A7-DAA1-9AE0-D51E7FE5C4A0}</Project>
       <Name>SteamVR</Name>
     </ProjectReference>
-    <ProjectReference Include="SteamVR_Windows_EditorHelper.csproj">
-      <Project>{C175C2D9-6D4A-2D18-0ECE-FCD34EFCE564}</Project>
-      <Name>SteamVR_Windows_EditorHelper</Name>
-    </ProjectReference>
     <ProjectReference Include="SteamVR_Actions.csproj">
       <Project>{E73AF16D-894D-34BB-2699-2235E54EADB5}</Project>
       <Name>SteamVR_Actions</Name>
+    </ProjectReference>
+    <ProjectReference Include="SteamVR_Windows_EditorHelper.csproj">
+      <Project>{C175C2D9-6D4A-2D18-0ECE-FCD34EFCE564}</Project>
+      <Name>SteamVR_Windows_EditorHelper</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
