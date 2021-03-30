@@ -10,6 +10,7 @@ public class VoiceCommands : MonoBehaviour
     KeywordRecognizer keywordRecognizer;
     Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
     GameObject sceneManager;
+    
 
     void Start()
     {
@@ -32,6 +33,18 @@ public class VoiceCommands : MonoBehaviour
         {
             Debug.Log("Wald");
             sceneManager.GetComponent<SceneSwitch>().switchToScene("Scene2Forest");
+        });
+
+        keywords.Add("Hilfe an", () =>
+        {
+            Debug.Log("Hilfe an");
+            GameObject.Find("MainCanvas").GetComponent<Canvas>().enabled = true;
+        });
+
+        keywords.Add("Hilfe aus", () =>
+        {
+            Debug.Log("Hilfe aus");
+            GameObject.Find("MainCanvas").GetComponent<Canvas>().enabled = false;
         });
 
         keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());

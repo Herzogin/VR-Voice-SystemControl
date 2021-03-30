@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ChangeColor.cs" />
+    <Compile Include="Assets\Scripts\InfotextCanvasAppears.cs" />
     <Compile Include="Assets\Scripts\ManipulateColorByVoice.cs" />
     <Compile Include="Assets\Scripts\ManipulateSizeByVoice.cs" />
     <Compile Include="Assets\Scripts\SceneSwitch.cs" />
