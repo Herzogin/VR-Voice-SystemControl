@@ -69,9 +69,15 @@
     <Compile Include="Assets\Scripts\SceneSwitch.cs" />
     <Compile Include="Assets\Scripts\SelectObjectByRaycast.cs" />
     <Compile Include="Assets\Scripts\SelectObjectByVoice.cs" />
+    <Compile Include="Assets\Scripts\SkyboxController.cs" />
+    <Compile Include="Assets\Scripts\TurtleMove.cs" />
     <Compile Include="Assets\Scripts\VoiceAndLaserpointer.cs" />
     <Compile Include="Assets\Scripts\VoiceCommands.cs" />
+    <Compile Include="Assets\ToonyTurtle\Extra\TurtleAnimControll.cs" />
     <None Include="Assets\Materials\highlight.shader" />
+    <None Include="Assets\ToonyTurtle\Readme.txt" />
+    <None Include="Assets\VertexColorFarmAnimals\Shaders\VertexColorUnlit.shader" />
+    <None Include="Assets\Butterfly (Animated)\Butterfly (Animated).txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/HTW-FB4/Desktop/ViveVoiceMultimodal/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
