@@ -47,6 +47,16 @@ public class LaserPointer : MonoBehaviour
             Debug.Log(e.target.name + " was clicked");
             skyboxScript.SkyToDay();
         }
+        if (e.target.name == "MusicOn")
+        {
+            Debug.Log(e.target.name + " was clicked");
+            FindObjectOfType<AudioManager>().UnPauseAudio("JoshuasSong");
+        }
+        if (e.target.name == "MusicOff")
+        {
+            Debug.Log(e.target.name + " was clicked");
+            FindObjectOfType<AudioManager>().PauseAudio("JoshuasSong");
+        }
         if (e.target.name == "moonSwitch")
         {
             Debug.Log(e.target.name + " was clicked");
