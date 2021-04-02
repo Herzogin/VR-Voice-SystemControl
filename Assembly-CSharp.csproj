@@ -78,7 +78,6 @@
     <Compile Include="Assets\Scripts\VoiceAndLaserpointer.cs" />
     <Compile Include="Assets\Scripts\VoiceCommands.cs" />
     <Compile Include="Assets\ToonyTurtle\Extra\TurtleAnimControll.cs" />
-    <None Include="Assets\Materials\highlight.shader" />
     <None Include="Assets\ToonyTurtle\Readme.txt" />
     <None Include="Assets\VertexColorFarmAnimals\Shaders\VertexColorUnlit.shader" />
     <None Include="Assets\Ground materials FD\Information package.txt" />

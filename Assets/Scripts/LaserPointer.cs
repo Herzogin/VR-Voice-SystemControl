@@ -62,6 +62,16 @@ public class LaserPointer : MonoBehaviour
             Debug.Log(e.target.name + " was clicked");
             skyboxScript.SkyToNight();
         }
+        if (e.target.name == "getHelp")
+        {
+            Debug.Log(e.target.name + " was clicked");
+            GameObject.Find("MainCanvas").GetComponent<Canvas>().enabled = true;
+        }
+        if (e.target.name == "getHelpOff")
+        {
+            Debug.Log(e.target.name + " was clicked");
+            GameObject.Find("MainCanvas").GetComponent<Canvas>().enabled = false;
+        }
         else
         {
             Debug.Log(e.target.name + " was clicked, but we ignored it");
