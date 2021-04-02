@@ -9,6 +9,7 @@ public class LaserPointer : MonoBehaviour
 {
     public SteamVR_LaserPointer laserPointer;
     GameObject sceneManager;
+    SkyboxController skyboxScript;
 
 
 
@@ -22,6 +23,7 @@ public class LaserPointer : MonoBehaviour
     private void Start()
     {
         sceneManager = GameObject.Find("SceneManager");
+        skyboxScript = GameObject.FindObjectOfType(typeof(SkyboxController)) as SkyboxController;
     }
 
     public void PointerClick(object sender, PointerEventArgs e)
@@ -39,6 +41,16 @@ public class LaserPointer : MonoBehaviour
             Debug.Log(e.target.name + " was clicked");
             FindObjectOfType<AudioManager>().PlayAudio("SceneSwitchSound");
             sceneManager.GetComponent<SceneSwitch>().switchToScene("Scene2Forest");
+        }
+        if (e.target.name == "sunSwitch")
+        {
+            Debug.Log(e.target.name + " was clicked");
+            skyboxScript.SkyToDay();
+        }
+        if (e.target.name == "moonSwitch")
+        {
+            Debug.Log(e.target.name + " was clicked");
+            skyboxScript.SkyToNight();
         }
         else
         {
