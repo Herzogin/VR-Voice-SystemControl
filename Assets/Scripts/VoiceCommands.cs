@@ -26,43 +26,70 @@ public class VoiceCommands : MonoBehaviour
         keywords.Add("Anfang", () =>
         {
             Debug.Log("Anfang");
+            FindObjectOfType<AudioManager>().PlayAudio("SceneSwitchSound");
             sceneManager.GetComponent<SceneSwitch>().switchToScene("EntranceScene");
         });
 
         keywords.Add("Strand", () =>
         {
             Debug.Log("Strand");
+            FindObjectOfType<AudioManager>().PlayAudio("SceneSwitchSound");
             sceneManager.GetComponent<SceneSwitch>().switchToScene("Scene1Beach");
         });
 
         keywords.Add("Wald", () =>
         {
             Debug.Log("Wald");
+            FindObjectOfType<AudioManager>().PlayAudio("SceneSwitchSound");
             sceneManager.GetComponent<SceneSwitch>().switchToScene("Scene2Forest");
         });
 
         keywords.Add("Hilfe an", () =>
         {
             Debug.Log("Hilfe an");
+            FindObjectOfType<AudioManager>().PlayAudio("HelpOnSound");
             GameObject.Find("MainCanvas").GetComponent<Canvas>().enabled = true;
         });
 
         keywords.Add("Hilfe aus", () =>
         {
             Debug.Log("Hilfe aus");
+            FindObjectOfType<AudioManager>().PlayAudio("HelpOffSound");
             GameObject.Find("MainCanvas").GetComponent<Canvas>().enabled = false;
         });
+
+        keywords.Add("Musik an", () =>
+        {
+            Debug.Log("Musik an");
+            //FindObjectOfType<AudioManager>().PlayAudio("BackgroundSound");
+            FindObjectOfType<AudioManager>().UnPauseAudio("JoshuasSong");
+        });
+
+        keywords.Add("Musik aus", () =>
+        {
+            Debug.Log("Musik aus");
+            FindObjectOfType<AudioManager>().PauseAudio("JoshuasSong");
+
+        });
+        //keywords.Add("lauter", () =>
+        //{
+        //    Debug.Log("lauter");
+        //    FindObjectOfType<AudioManager>().Volume("HelpOffSound");
+        //    FindObjectOfType<AudioManager>().Volume("HelpOnSound");
+        //});
 
         keywords.Add("Stop", () =>
         {
             Debug.Log("Stop");
             GameObject.Find("Butterfly").GetComponent<Animation>().enabled = false;
+            FindObjectOfType<AudioManager>().PauseAudio("JoshuasSong");
         });
 
         keywords.Add("Start", () =>
         {
             Debug.Log("Start");
             GameObject.Find("Butterfly").GetComponent<Animation>().enabled = true;
+            FindObjectOfType<AudioManager>().UnPauseAudio("JoshuasSong");
         });
 
         keywords.Add("Tag", () =>
