@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\BackgroundMusic.cs" />
     <Compile Include="Assets\Scripts\ChangeColor.cs" />
     <Compile Include="Assets\Scripts\InfotextCanvasAppears.cs" />
+    <Compile Include="Assets\Scripts\LaserPointer.cs" />
     <Compile Include="Assets\Scripts\ManipulateColorByVoice.cs" />
     <Compile Include="Assets\Scripts\ManipulateSizeByVoice.cs" />
     <Compile Include="Assets\Scripts\SceneSwitch.cs" />
@@ -80,6 +81,7 @@
     <None Include="Assets\Materials\highlight.shader" />
     <None Include="Assets\ToonyTurtle\Readme.txt" />
     <None Include="Assets\VertexColorFarmAnimals\Shaders\VertexColorUnlit.shader" />
+    <None Include="Assets\Ground materials FD\Information package.txt" />
     <None Include="Assets\Butterfly (Animated)\Butterfly (Animated).txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/HTW-FB4/Desktop/ViveVoiceMultimodal/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
