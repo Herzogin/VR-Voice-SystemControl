@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Rabbits\Demo\Scripts\AnimatorParamatersChange.cs" />
     <Compile Include="Assets\Scripts\Audio.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\BackgroundMusic.cs" />
@@ -70,6 +71,10 @@
     <Compile Include="Assets\Scripts\LaserPointer.cs" />
     <Compile Include="Assets\Scripts\ManipulateColorByVoice.cs" />
     <Compile Include="Assets\Scripts\ManipulateSizeByVoice.cs" />
+    <Compile Include="Assets\Scripts\Rabbit.cs" />
+    <Compile Include="Assets\Scripts\RabbitController.cs" />
+    <Compile Include="Assets\Scripts\RabbitIdle.cs" />
+    <Compile Include="Assets\Scripts\RabbitRun.cs" />
     <Compile Include="Assets\Scripts\SceneSwitch.cs" />
     <Compile Include="Assets\Scripts\SelectObjectByRaycast.cs" />
     <Compile Include="Assets\Scripts\SelectObjectByVoice.cs" />
@@ -81,6 +86,7 @@
     <None Include="Assets\ToonyTurtle\Readme.txt" />
     <None Include="Assets\VertexColorFarmAnimals\Shaders\VertexColorUnlit.shader" />
     <None Include="Assets\Ground materials FD\Information package.txt" />
+    <None Include="Assets\Spiders\animations list.txt" />
     <None Include="Assets\Butterfly (Animated)\Butterfly (Animated).txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/HTW-FB4/Desktop/ViveVoiceMultimodal/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

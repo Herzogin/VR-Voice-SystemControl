@@ -7,7 +7,8 @@ public class BackgroundMusic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FindObjectOfType<AudioManager>().LoopAudio("JoshuasSong");
+        //FindObjectOfType<AudioManager>().LoopAudio("JoshuasSong");
+        FindObjectOfType<AudioManager>().LoopAudio("BackgroundSound");
         //while (true)
         //{
         //    FindObjectOfType<AudioManager>().PlayAudio("JoshuasSong");

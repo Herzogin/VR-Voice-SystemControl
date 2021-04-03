@@ -10,6 +10,7 @@ public class LaserPointer : MonoBehaviour
     public SteamVR_LaserPointer laserPointer;
     GameObject sceneManager;
     SkyboxController skyboxScript;
+    public GameObject[] rabbits;
 
 
 
@@ -50,12 +51,14 @@ public class LaserPointer : MonoBehaviour
         if (e.target.name == "MusicOn")
         {
             Debug.Log(e.target.name + " was clicked");
-            FindObjectOfType<AudioManager>().UnPauseAudio("JoshuasSong");
+            //FindObjectOfType<AudioManager>().UnPauseAudio("JoshuasSong");
+            FindObjectOfType<AudioManager>().UnPauseAudio("BackgroundSound");
         }
         if (e.target.name == "MusicOff")
         {
             Debug.Log(e.target.name + " was clicked");
-            FindObjectOfType<AudioManager>().PauseAudio("JoshuasSong");
+            //FindObjectOfType<AudioManager>().PauseAudio("JoshuasSong");
+            FindObjectOfType<AudioManager>().PauseAudio("BackgroundSound");
         }
         if (e.target.name == "moonSwitch")
         {
@@ -71,6 +74,32 @@ public class LaserPointer : MonoBehaviour
         {
             Debug.Log(e.target.name + " was clicked");
             GameObject.Find("MainCanvas").GetComponent<Canvas>().enabled = false;
+        }
+        if (e.target.name == "Stop")
+        {
+            Debug.Log(e.target.name + " was clicked");
+            //GameObject.Find("Rabbit").GetComponent<Animator>().enabled = false;
+            rabbits = GameObject.FindGameObjectsWithTag("animal");
+            foreach (GameObject rabbit in rabbits)
+            {
+                rabbit.GetComponent<Animator>().enabled = false;
+            }
+            GameObject.Find("Butterfly").GetComponent<Animation>().enabled = false;
+            //FindObjectOfType<AudioManager>().PauseAudio("JoshuasSong");
+            FindObjectOfType<AudioManager>().UnPauseAudio("BackgroundSound");
+        }
+        if (e.target.name == "Play")
+        {
+            Debug.Log(e.target.name + " was clicked");
+            //GameObject.Find("Rabbit").GetComponent<Animator>().enabled = true;
+            rabbits = GameObject.FindGameObjectsWithTag("animal");
+            foreach (GameObject rabbit in rabbits)
+            {
+                rabbit.GetComponent<Animator>().enabled = true;
+            }
+            GameObject.Find("Butterfly").GetComponent<Animation>().enabled = true;
+            //FindObjectOfType<AudioManager>().UnPauseAudio("JoshuasSong");
+            FindObjectOfType<AudioManager>().UnPauseAudio("BackgroundSound");
         }
         else
         {
