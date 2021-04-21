@@ -1043,7 +1043,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460832760}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.19, y: -0.04, z: 1.539}
+  m_LocalPosition: {x: -0.19, y: -0.04, z: -1.61}
   m_LocalScale: {x: 0.5, y: 0.1125, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2482,7 +2482,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 998427692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.911, y: -0.04, z: 1.539}
+  m_LocalPosition: {x: -0.911, y: -0.04, z: -1.58}
   m_LocalScale: {x: 0.5, y: 0.1125, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4395,7 +4395,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserPointer: {fileID: 2047159706}
-  rabbits: []
 --- !u!1 &2118556254 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1588090451174212, guid: c737dd230724d61469e1c672cf47ed9e,
@@ -4498,6 +4497,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2274777807595686333, guid: 21a7d9d5cb07c264bb85664e18af0843,
+        type: 3}
+      propertyPath: audios.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2274777807595686333, guid: 21a7d9d5cb07c264bb85664e18af0843,
         type: 3}

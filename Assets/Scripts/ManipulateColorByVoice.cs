@@ -48,7 +48,6 @@ public class ManipulateColorByVoice : MonoBehaviour
     private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
     {
         System.Action keywordAction;
-        // if the keyword recognized is in our dictionary, call that Action.
         if (keywords.TryGetValue(args.text, out keywordAction))
         {
             keywordAction.Invoke();

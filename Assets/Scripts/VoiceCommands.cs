@@ -10,8 +10,6 @@ public class VoiceCommands : MonoBehaviour
     KeywordRecognizer keywordRecognizer;
     Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
     GameObject sceneManager;
-    //public GameObject turtle;
-    //TurtleMove TurtleScript;
     public GameObject kamera;
     SkyboxController skyboxScript;
     public GameObject[] rabbits;
@@ -20,10 +18,8 @@ public class VoiceCommands : MonoBehaviour
     void Start()
     {
         sceneManager = GameObject.Find("SceneManager");
-        //TurtleScript = GameObject.FindObjectOfType(typeof(TurtleMove)) as TurtleMove;
         skyboxScript = GameObject.FindObjectOfType(typeof(SkyboxController)) as SkyboxController;
-
-        //Create keywords for keyword recognizer
+        
         keywords.Add("Anfang", () =>
         {
             Debug.Log("Anfang");
@@ -62,35 +58,26 @@ public class VoiceCommands : MonoBehaviour
         keywords.Add("Musik an", () =>
         {
             Debug.Log("Musik an");
-            //FindObjectOfType<AudioManager>().UnPauseAudio("JoshuasSong");
             FindObjectOfType<AudioManager>().UnPauseAudio("BackgroundSound");
         });
 
         keywords.Add("Musik aus", () =>
         {
             Debug.Log("Musik aus");
-            //FindObjectOfType<AudioManager>().PauseAudio("JoshuasSong");
             FindObjectOfType<AudioManager>().PauseAudio("BackgroundSound");
 
         });
-        //keywords.Add("lauter", () =>
-        //{
-        //    Debug.Log("lauter");
-        //    FindObjectOfType<AudioManager>().Volume("HelpOffSound");
-        //    FindObjectOfType<AudioManager>().Volume("HelpOnSound");
-        //});
+     
 
         keywords.Add("Stop", () =>
         {
             Debug.Log("Stop");
             GameObject.Find("Butterfly").GetComponent<Animation>().enabled = false;
-            //GameObject.Find("Rabbit").GetComponent<Animator>().enabled = false;
             rabbits = GameObject.FindGameObjectsWithTag("animal");
             foreach (GameObject rabbit in rabbits)
             {
                 rabbit.GetComponent<Animator>().enabled = false;
             }
-            //FindObjectOfType<AudioManager>().PauseAudio("JoshuasSong");
             FindObjectOfType<AudioManager>().PauseAudio("BackgroundSound");
         });
 
@@ -98,13 +85,11 @@ public class VoiceCommands : MonoBehaviour
         {
             Debug.Log("Start");
             GameObject.Find("Butterfly").GetComponent<Animation>().enabled = true;
-            //GameObject.Find("Rabbit").GetComponent<Animator>().enabled = true;
             rabbits = GameObject.FindGameObjectsWithTag("animal");
             foreach (GameObject rabbit in rabbits)
             {
                 rabbit.GetComponent<Animator>().enabled = true;
             }
-            //FindObjectOfType<AudioManager>().UnPauseAudio("JoshuasSong");
             FindObjectOfType<AudioManager>().UnPauseAudio("BackgroundSound");
         });
 
@@ -120,15 +105,6 @@ public class VoiceCommands : MonoBehaviour
             skyboxScript.SkyToNight();
         });
 
-        //keywords.Add("Schildkröte", () =>
-        //{
-        //    Debug.Log("Schildkröte");
-        //    TurtleScript.TurtleWalk();
-        //});
-
-
-
-
 
         keywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
 
@@ -141,7 +117,6 @@ public class VoiceCommands : MonoBehaviour
     private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
     {
         System.Action keywordAction;
-        // if the keyword recognized is in our dictionary, call that Action.
         if (keywords.TryGetValue(args.text, out keywordAction))
         {
             keywordAction.Invoke();

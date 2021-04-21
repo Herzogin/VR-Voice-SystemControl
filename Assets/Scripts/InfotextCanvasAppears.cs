@@ -18,7 +18,7 @@ public class InfotextCanvasAppears : MonoBehaviour
 
     private IEnumerator InfotextVanishes()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(10f);
         GetComponent<Canvas>().enabled = false;
     }
 }

@@ -14,7 +14,6 @@ public class AudioManager : MonoBehaviour
             a.source.volume = a.volume;
         }
     }
-    
 
     public void PlayAudio(string name)
     {
@@ -41,11 +40,8 @@ public class AudioManager : MonoBehaviour
         a.source.loop = true;
     }
 
-
-
     public void Volume(string name)
     {
         Audio a = Array.Find(audios, audio => audio.name == name);
-        
     }
 }

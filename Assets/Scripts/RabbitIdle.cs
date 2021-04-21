@@ -5,8 +5,7 @@ using UnityEngine;
 public class RabbitIdle : MonoBehaviour
 {
     private Animator m_animator;
-
-    //Use this for initialization
+    
 
     void Start()
     {

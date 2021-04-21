@@ -27,7 +27,6 @@ public class VoiceAndLaserpointer : MonoBehaviour
     void Start()
     {
         targetGameObject = null;
-        //keywords for keyword recognizer
         keywords.Add("blue", () =>
         {
             Debug.Log("blue");
@@ -73,8 +72,6 @@ public class VoiceAndLaserpointer : MonoBehaviour
     public void PointerInside(object sender, PointerEventArgs e)
     {
         targetGameObject = e.target.gameObject;
-        //wie komme ich an das zweite Material??????
-        //targetGameObject.GetComponent<Renderer>().material
     }
 
     public void PointerOutside(object sender, PointerEventArgs e)
@@ -85,7 +82,6 @@ public class VoiceAndLaserpointer : MonoBehaviour
     private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
     {
         System.Action keywordAction;
-        // if the keyword recognized is in our dictionary, call that Action.
         if (keywords.TryGetValue(args.text, out keywordAction))
         {
             keywordAction.Invoke();

@@ -9,22 +9,15 @@ public class SelectObjectByVoice : MonoBehaviour
 
     KeywordRecognizer keywordRecognizer;
     Dictionary<string, System.Action> keywords = new Dictionary<string, System.Action>();
-    //public GameObject targetGameObject;
-    //public GameObject Object;
-    //ChangeColor script;
 
     // Start is called before the first frame update
     void Start()
     {
-        //script = GameObject.FindObjectOfType(typeof(ChangeColor)) as ChangeColor;
-        //script.TurnGreen();
-        //Create keywords for keyword recognizer
         keywords.Add("Würfel", () =>
         {
             Debug.Log("cube selected");
             GameObject target = GameObject.Find("Cube");
             target.GetComponent<ManipulateColorByVoice>().StartListening();
-            //target.GetComponent<ManipulateSizeByVoice>().StartListening();
         });
 
         keywords.Add("Kugel", () =>
@@ -32,7 +25,6 @@ public class SelectObjectByVoice : MonoBehaviour
             Debug.Log("sphere selected");
             GameObject target = GameObject.Find("Sphere");
             target.GetComponent<ManipulateColorByVoice>().StartListening();
-            //target.GetComponent<ManipulateSizeByVoice>().StartListening();
         });
 
         keywords.Add("Zylinder", () =>
@@ -60,7 +52,6 @@ public class SelectObjectByVoice : MonoBehaviour
     private void KeywordRecognizer_OnPhraseRecognized(PhraseRecognizedEventArgs args)
     {
         System.Action keywordAction;
-        // if the keyword recognized is in our dictionary, call that Action.
         if (keywords.TryGetValue(args.text, out keywordAction))
         {
             keywordAction.Invoke();

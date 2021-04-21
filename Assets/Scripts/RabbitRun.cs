@@ -6,8 +6,6 @@ public class RabbitRun : MonoBehaviour
 {
     private Animator m_animator;
 
-    //Use this for initialization
-
     void Start()
     {
         m_animator = GetComponent<Animator>();
